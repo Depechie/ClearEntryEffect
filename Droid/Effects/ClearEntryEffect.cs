@@ -20,8 +20,7 @@ namespace ClearEntryEffect.Droid.Effects
 		}
 
 		private void ConfigureControl()
-		{
-			//TODO: Glenn - search for correct drawable image that represents an x
+		{			
 			EditText editText = ((EditText)Control);
 			editText.SetCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, Resource.Drawable.ic_clear_icon, 0);
 			editText.SetOnTouchListener(new OnDrawableTouchListener());
@@ -35,7 +34,6 @@ namespace ClearEntryEffect.Droid.Effects
 			if (v is EditText && e.Action == MotionEventActions.Up)
 			{
 				EditText editText = (EditText)v;
-				//TODO: Glenn - Calculate correct editText.Right position
 				if (e.RawX >= (editText.Right - editText.GetCompoundDrawables()[2].Bounds.Width()))
 				{
 					editText.Text = string.Empty;
